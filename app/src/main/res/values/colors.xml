@@ -7,4 +7,37 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- J'ai testé avec l'outil d'accessibilité et aucun problème entre couleurs -->
+    <color name="bleu_marine">#004278</color>
+    <color name="bleu_ciel">#007eb5</color>
+    <color name="vert">#097f03</color>
+    <color name="violet">#7c08a3</color>
+    <color name="rouge">#d30012</color>
+    <color name="fuchsia">#da277a</color>
+
+    <!-- Couleurs secondaires du pdf de SII
+    <color name="pantone_533C(couleur secondaire)">#1c2445</color>
+    <color name="pantone_2119C (couleur secondaire)">#303568</color>
+    <color name="pantone_2381C (couleur secondaire)">#5d94d0</color>
+    <color name="pantone_2708C (couleur secondaire)">#b8d1ec</color>
+    <color name="pantone_3537C (couleur secondaire)">#084403</color>
+    <color name="pantone_4213C (couleur secondaire)">#73952c</color>
+    <color name="pantone_373C (couleur secondaire)">#cfff7c</color>
+    <color name="pantone_2607C (couleur secondaire)">#550875</color>
+    <color name="pantone_4101C (couleur secondaire)">#70010f</color>
+    <color name="pantone_211C (couleur secondaire)">#f979b4</color>
+    <color name="pantone_6050C (couleur secondaire)">#ffafd4</color>
+    <color name="pantone_1765C (couleur secondaire)">#ffa9b3</color>
+    <color name="pantone_6016C (couleur secondaire)">#f2965c</color>
+    <color name="pantone_712C (couleur secondaire)">#ffcc99</color>
+    <color name="pantone_2002C (couleur secondaire)">#ffeb7a</color>
+    <color name="pantone_2469C (couleur secondaire)">#915d3d</color>
+    <color name="pantone_7576C (couleur secondaire)">#d58753</color>
+    <color name="pantone_474C (couleur secondaire)">#efc2a5</color>
+    <color name="pantone_6217C (couleur secondaire)">#434649</color>
+    <color name="pantone_430C (couleur secondaire)">#828991</color>
+    <color name="pantone_427C (couleur secondaire)">#cfcfcf</color>
+    -->
+
 </resources>
