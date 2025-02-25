@@ -1,5 +1,10 @@
 [versions]
 agp = "8.6.0"
+cameraCoreVersion = "1.1.0-beta01"
+cameraCamera2Version = "1.1.0-beta01"
+cameraLifecycleVersion = "1.1.0-beta01"
+cameraViewVersion = "1.1.0-beta01"
+cameraExtensionsVersion = "1.1.0-beta01"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -15,6 +20,11 @@ navigationUiKtx = "2.8.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "cameraExtensionsVersion" }
+camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraViewVersion" }
+camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraLifecycleVersion" }
+camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "cameraCamera2Version" }
+camera-core = { module = "androidx.camera:camera-core", version.ref = "cameraCoreVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
