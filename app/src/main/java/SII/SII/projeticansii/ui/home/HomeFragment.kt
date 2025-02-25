@@ -19,6 +19,8 @@ import androidx.lifecycle.ViewModelProvider
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    private var VIBRATION_DURATION = 200L
+    private var SILENCE_DURATION = 50L
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -43,10 +45,9 @@ class HomeFragment : Fragment() {
 
         binding.buttonVibration1.setOnClickListener {
             val vibrator = requireActivity().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-            val timings = longArrayOf(300, 100, 100, 100, 100) // Dash, dot, dot
+            val timings = longArrayOf(VIBRATION_DURATION) // Dash
             val amplitudes = intArrayOf(
-                VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE
-            )
+                VibrationEffect.DEFAULT_AMPLITUDE)
             val vibrationEffect = VibrationEffect.createWaveform(timings, amplitudes, -1)
             val audioAttributes = AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_ALARM)
@@ -57,7 +58,7 @@ class HomeFragment : Fragment() {
 
         binding.buttonVibration2.setOnClickListener {
             val vibrator = requireActivity().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-            val timings = longArrayOf(100, 100, 100, 100, 300) // Dot, dot, dash
+            val timings = longArrayOf(VIBRATION_DURATION, SILENCE_DURATION, VIBRATION_DURATION, SILENCE_DURATION, VIBRATION_DURATION) //
             val amplitudes = intArrayOf(
                 VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE
             )
@@ -68,34 +69,11 @@ class HomeFragment : Fragment() {
                 .build()
             vibrator.vibrate(vibrationEffect, audioAttributes)
         }
-            binding.buttonVibration3.setOnClickListener {
-                val vibrator = requireActivity().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-                val vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_DOUBLE_CLICK)
-                val audioAttributes = AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_ALARM)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build()
-                vibrator.vibrate(vibrationEffect, audioAttributes)
-            }
-
-            binding.buttonVibration4.setOnClickListener {
-                val vibrator = requireActivity().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-                val vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK)
-                val audioAttributes = AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_ALARM)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build()
-                vibrator.vibrate(vibrationEffect, audioAttributes)
-            }
-
-        binding.buttonVibration5.setOnClickListener {
+        binding.buttonVibration3.setOnClickListener {
             val vibrator = requireActivity().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-            val timings = longArrayOf(125, 125, 125, 125, 125, 125, 250, 125, 125, 125, 125, 125, 125, 250)
+            val timings = longArrayOf(VIBRATION_DURATION, SILENCE_DURATION, VIBRATION_DURATION) //
             val amplitudes = intArrayOf(
-                VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE, 0,
-                VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE, 0,
-                VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE, 0,
-                VibrationEffect.DEFAULT_AMPLITUDE, 0
+                VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE
             )
             val vibrationEffect = VibrationEffect.createWaveform(timings, amplitudes, -1)
             val audioAttributes = AudioAttributes.Builder()
@@ -105,7 +83,19 @@ class HomeFragment : Fragment() {
             vibrator.vibrate(vibrationEffect, audioAttributes)
         }
 
-
+        binding.buttonVibration4.setOnClickListener {
+            val vibrator = requireActivity().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            val timings = longArrayOf(VIBRATION_DURATION, SILENCE_DURATION, VIBRATION_DURATION, SILENCE_DURATION, VIBRATION_DURATION, SILENCE_DURATION, VIBRATION_DURATION) //
+            val amplitudes = intArrayOf(
+                VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE, 0, VibrationEffect.DEFAULT_AMPLITUDE
+            )
+            val vibrationEffect = VibrationEffect.createWaveform(timings, amplitudes, -1)
+            val audioAttributes = AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_ALARM)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build()
+            vibrator.vibrate(vibrationEffect, audioAttributes)
+        }
 
         return root
     }
