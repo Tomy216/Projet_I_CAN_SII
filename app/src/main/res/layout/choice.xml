@@ -1,0 +1,51 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/FirstUse"
+        android:layout_width="350dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato"
+        android:text="@string/text_premiere_utilisation"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonChoicePAM"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/bleu_ciel"
+        android:fontFamily="@font/lato"
+        android:text="@string/button_choix_PAM"
+        app:cornerRadius="45dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonChoiceAidant"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/buttonChoiceAidant"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:backgroundTint="@color/bleu_ciel"
+        android:fontFamily="@font/lato"
+        android:text="@string/button_choix_aidant"
+        app:cornerRadius="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.962"
+        app:strokeWidth="3dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

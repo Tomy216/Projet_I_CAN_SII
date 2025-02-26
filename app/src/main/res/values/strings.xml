@@ -6,4 +6,7 @@
     <string name="button_call">Appeler un aidant</string>
     <string name="button_contact_management">Gestion des contacts</string>
     <string name="default_phone_number">0123456789</string>
+    <string name="text_premiere_utilisation">Première utilisation</string>
+    <string name="button_choix_PAM">Je souhaite être \n aidé.e</string>
+    <string name="button_choix_aidant">Je souhaite fournir \n de l\'aide</string>
 </resources>
