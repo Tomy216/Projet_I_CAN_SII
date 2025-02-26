@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "SII.SII.projeticansii"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "SII.SII.projeticansii"
