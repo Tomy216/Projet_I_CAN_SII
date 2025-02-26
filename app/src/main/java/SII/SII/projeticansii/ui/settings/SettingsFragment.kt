@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import SII.SII.projeticansii.databinding.FragmentSettingsBinding
+import SII.SII.projeticansii.ui.SharedViewModel
+import androidx.fragment.app.activityViewModels
 
 class SettingsFragment : Fragment() {
 
@@ -16,22 +18,23 @@ class SettingsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(SettingsViewModel::class.java)
-
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSettings
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.editTextPhone.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                val phoneNumber = binding.editTextPhone.text.toString()
+                sharedViewModel.setPhoneNumber(phoneNumber)
+            }
         }
+
         return root
     }
 

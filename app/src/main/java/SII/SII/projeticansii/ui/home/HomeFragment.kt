@@ -8,6 +8,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import SII.SII.projeticansii.databinding.FragmentHomeBinding
+import SII.SII.projeticansii.ui.SharedViewModel
+import android.content.Intent
+import android.net.Uri
+import androidx.fragment.app.activityViewModels
 
 class HomeFragment : Fragment() {
 
@@ -16,22 +20,27 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        sharedViewModel.phoneNumber.observe(viewLifecycleOwner) { phoneNumber ->
+            // Use the phone number here
+            binding.callButton.setOnClickListener {
+                val intent = Intent(Intent.ACTION_CALL)
+                intent.data = Uri.parse("tel:$phoneNumber")
+                startActivity(intent)
+            }
         }
+
         return root
     }
 
